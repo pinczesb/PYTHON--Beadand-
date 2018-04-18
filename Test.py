@@ -6,3 +6,15 @@ def sumOfFirstN(n,outFile):
         sum += i
     s = s[0:-1] + '=' + str(sum)
     print(s,file=outFile)
+
+def secondsToTime(n,outFile):
+    tmp = n
+    year = n//(3600*24*365)
+    n=n%(3600*24*365)
+    day = n//(3600*24)
+    n = n%(3600*24)
+    hour = n//3600
+    n = n%3600
+    min = n//60
+    sec = n%60
+    print('{} seconds is {} year {} day {} hours {} minutes and {} seconds'.format(tmp,year,day,hour,min,sec))
