@@ -3,9 +3,8 @@ import string
 DICT_Morse_UpperAndNumbers={'A': '.-', 'B': '-...', 'C': '-.-.','D': '-..', 'E': '.', 'F': '..-.','G': '--.', 'H': '....', 'I': '..','J': '.---', 'K': '-.-', 'L': '.-..','M': '--', 'N': '-.', 'O': '---','P': '.--.', 'Q': '--.-', 'R': '.-.','S': '...', 'T': '-', 'U': '..-','V': '...-', 'W': '.--', 'X': '-..-','Y': '-.--', 'Z': '--..','0': '-----', '1': '.----', '2': '..---','3': '...--', '4': '....-', '5': '.....','6': '-....', '7': '--...', '8': '---..','9': '----.',' ':'/'}
 DICT_UpperAndNumbers_Morse={v:k for k, v in DICT_Morse_UpperAndNumbers.items()}
 
-str=input('String to convert: ')
-
-def ConvertToMorse(str):
+def ConvertToMorse():
+    str = input('String to convert: ')
     outfile=open('C:\\Users\Bence\Desktop\python\python.txt','w')
     str2=''
     for ch in str:
@@ -16,4 +15,4 @@ def ConvertToMorse(str):
         print(DICT_Morse_UpperAndNumbers[ch2.upper()],'/',end='',file=outfile)
     outfile.close()
 
-ConvertToMorse(str)
+ConvertToMorse()
