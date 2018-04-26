@@ -11,8 +11,18 @@ def ConvertToMorse():
         if ch not in string.punctuation:
             str2+=ch
     for ch2 in str2:
-        print(DICT_Morse_UpperAndNumbers[ch2.upper()], '/', end='')
-        print(DICT_Morse_UpperAndNumbers[ch2.upper()],'/',end='',file=outfile)
+        print(DICT_Morse_UpperAndNumbers[ch2.upper()], end='')
+        print(DICT_Morse_UpperAndNumbers[ch2.upper()],end='',file=outfile)
     outfile.close()
 
 ConvertToMorse()
+
+def ConvertFromMorse():
+    str=''
+    infile=open('C:\\Users\Bence\Desktop\python\python.txt','r')
+    for ch in infile:
+        str+=ch
+        for ch2 in str:
+            print(DICT_UpperAndNumbers_Morse[ch2],end='')
+
+ConvertFromMorse()
