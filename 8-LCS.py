@@ -4,8 +4,8 @@ def LCS(s1,s2):
     if s1[0]==s2[0]:
         return s1[0]+LCS(s1[1:],s2[1:])
     else:
-        a = LCS(s1[1:],s2)
-        b = LCS(s1,s2[1:])
+        a=LCS(s1[1:],s2)
+        b=LCS(s1,s2[1:])
         if len(a)>len(b):
             return a
         else:
