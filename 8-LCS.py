@@ -1,27 +1,18 @@
-def lcs(x, y):
-    for idx1 in range(len(x)-1):
-        for idx2 in range(len(y)-1):
-            if len(x) == 0 or len(y) == 0:
-               return ""
-            if x[idx1] == y[idx2]:
-                return x[idx1] + lcs(x[idx1], y[idx2])
-            else:
-                a = lcs(x[idx1], y)
-                b = lcs(x, y[idx2])
-                if len(a) > len(b):
-                    return a
-                else:
-                    return b
+def LCS(s1,s2):
+    if len(s1)==0 or len(s2)==0:
+       return ""
+    if s1[0]==s2[0]:
+        return s1[0]+LCS(s1[1:],s2[1:])
+    else:
+        a = LCS(s1[1:],s2)
+        b = LCS(s1,s2[1:])
+        if len(a)>len(b):
+            return a
+        else:
+            return b
 
-s1='aggtab'
-s2='gxtxayb'
-
-print(lcs(s1,s2))
-print(len(s1))
-print(len(s2))
-s1='aggtab'
-s2='gxtxayb'
-
+#s1='aggtab'
+#s2='gxtxayb'
+s1='abe'
+s2='bea'
 print(LCS(s1,s2))
-print(len(s1))
-print(len(s2))
