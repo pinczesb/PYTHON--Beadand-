@@ -1,10 +1,10 @@
 def LCS(x, y):
-    idx=0
     if len(x)>len(y):
         max=len(x)
     else:
         max=len(y)
-    while idx<max:
+    idx=max-1
+    while idx!=-1:
         if len(x) == 0 or len(y) == 0:
            return ""
         if x[idx] == y[idx]:
