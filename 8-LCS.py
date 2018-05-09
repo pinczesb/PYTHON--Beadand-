@@ -1,19 +1,26 @@
-def LongestCommonSubsequence(str1,str2):
+def LCS(x, y):
     idx=0
-    lcs=""
-    if len(str1)>len(str2):
-        maxlen=str1
-    if len(str1)<len(str2):
-        maxlen=str2
+    if len(x)>len(y):
+        max=len(x)
     else:
-        maxlen=str1
-    while idx<len(maxlen):
-        if str1[idx] is str2[idx]:
-            lcs+=maxlen[idx]
-        return lcs
-    idx+=1
+        max=len(y)
+    while idx<max:
+        if len(x) == 0 or len(y) == 0:
+           return ""
+        if x[idx] == y[idx]:
+            return x[idx] + LCS(x[idx+1], y[idx+1])
+        else:
+            a = LCS(x[idx+1], y)
+            b = LCS(x, y[idx+1])
 
+            if len(a) > len(b):
+                return a
+            else:
+                return b
 
-s1="aaafghl"
-s2="aaakgh"
-print(LongestCommonSubsequence(s1,s2))
+s1='aggtab'
+s2='gxtxayb'
+
+print(LCS(s1,s2))
+print(len(s1))
+print(len(s2))
