@@ -2,10 +2,9 @@ import string
 
 DICT_Morse_UpperAndNumbers={'A': '.-', 'B': '-...', 'C': '-.-.','D': '-..', 'E': '.', 'F': '..-.','G': '--.', 'H': '....', 'I': '..','J': '.---', 'K': '-.-', 'L': '.-..','M': '--', 'N': '-.', 'O': '---','P': '.--.', 'Q': '--.-', 'R': '.-.','S': '...', 'T': '-', 'U': '..-','V': '...-', 'W': '.--', 'X': '-..-','Y': '-.--', 'Z': '--..','0': '-----', '1': '.----', '2': '..---','3': '...--', '4': '....-', '5': '.....','6': '-....', '7': '--...', '8': '---..','9': '----.',' ':'_','':''}
 DICT_UpperAndNumbers_Morse={v:k for k, v in DICT_Morse_UpperAndNumbers.items()}
-
 def ConvertToMorse():
     str = input('String to convert: ')
-    outfile=open('C:\\Users\Bence\Desktop\python\python.txt','w')
+    outfile=open('python.txt','w')
     str2=''
     for ch in str:
         if ch not in string.punctuation:
@@ -19,7 +18,7 @@ ConvertToMorse()
 
 def ConvertFromMorse():
     str=''
-    infile=open('C:\\Users\Bence\Desktop\python\python.txt','r')
+    infile=open('python.txt','r')
     for ch in infile:
         str+=ch
         str=str.replace(' ','')
